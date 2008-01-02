@@ -10,6 +10,7 @@ Group:		Games/Puzzles
 URL:		http://triq.net/~jens/atomix.php
 Source:		ftp://ftp.gnome.org/pub/gnome/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1:	atomix-zh_TW.po.bz2
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	gettext
 BuildRequires:	perl(XML::Parser)
