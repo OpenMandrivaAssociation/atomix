@@ -39,16 +39,6 @@ is inspired by the original Amiga version.
 rm -rf %{buildroot}
 GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std bindir=%{_gamesbindir}
 
-mkdir -p %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} <<_EOF_
-?package(%{name}): \
- command="%{_gamesbindir}/atomix" \
- icon="%{name}.png" \
- longtitle="Build molecules out of single atoms" \
- needs="x11" \
- section="More Applications/Games/Puzzles" \
- title="Atomix" xdg="true"
-_EOF_
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
@@ -89,7 +79,6 @@ rm -rf %{buildroot}
 %{_datadir}/pixmaps/*.png
 %ghost %{_localstatedir}/games/atomix.scores
 
-%{_menudir}/%{name}
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
