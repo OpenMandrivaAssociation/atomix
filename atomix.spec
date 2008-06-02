@@ -58,7 +58,7 @@ convert -geometry 48x48 atomix-icon.png %{buildroot}%{_liconsdir}/%{name}.png
 %find_lang %{name}
 
 %pre
-%create_ghostfile %{_localstatedir}/games/atomix.scores root games 0664
+%create_ghostfile %{_localstatedir}/lib/games/atomix.scores root games 0664
 
 %post
 %update_menus
@@ -77,7 +77,7 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_datadir}/gnome-2.0/ui/*.xml
 %{_datadir}/pixmaps/*.png
-%ghost %{_localstatedir}/games/atomix.scores
+%ghost %{_localstatedir}/lib/games/atomix.scores
 
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
