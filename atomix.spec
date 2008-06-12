@@ -60,11 +60,15 @@ convert -geometry 48x48 atomix-icon.png %{buildroot}%{_liconsdir}/%{name}.png
 %pre
 %create_ghostfile %{_localstatedir}/lib/games/atomix.scores root games 0664
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %{buildroot}
