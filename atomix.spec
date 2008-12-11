@@ -14,7 +14,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	gettext
 BuildRequires:	perl(XML::Parser)
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
 Requires(pre):	rpm-helper
 
