@@ -1,11 +1,11 @@
 %define	version	2.14.0
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 Summary:	Mind game - build molecules out of single atoms
 Name:		atomix
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 Group:		Games/Puzzles
 URL:		http://triq.net/~jens/atomix.php
 Source:		ftp://ftp.gnome.org/pub/gnome/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -32,12 +32,14 @@ is inspired by the original Amiga version.
 [ "%{version}" = "1.2.2a" ] && bzip2 -dc %{SOURCE1} > po/zh_TW.po
 
 %build
-%configure2_5x --bindir=%{_gamesbindir}
+%configure2_5x --bindir=%{_gamesbindir} --localstatedir=%{_localstatedir}/lib
 %make
 
 %install
 rm -rf %{buildroot}
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std bindir=%{_gamesbindir}
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std \
+	bindir=%{_gamesbindir} \
+	localstatedir=%{_localstatedir}/lib
 
 
 desktop-file-install --vendor="" \
@@ -46,7 +48,7 @@ desktop-file-install --vendor="" \
   --add-category="X-MandrivaLinux-MoreApplications-Games-Puzzles" \
   --add-category="Game" \
   --add-category="LogicGame" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 mkdir -p %{buildroot}%{_miconsdir} \
          %{buildroot}%{_iconsdir} \
