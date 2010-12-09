@@ -1,5 +1,5 @@
 %define	version	2.14.0
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 Summary:	Mind game - build molecules out of single atoms
 Name:		atomix
