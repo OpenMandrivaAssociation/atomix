@@ -1,5 +1,5 @@
 %define	version	2.14.0
-%define release	7
+%define release	8
 
 Summary:		Mind game - build molecules out of single atoms
 Name:		atomix
