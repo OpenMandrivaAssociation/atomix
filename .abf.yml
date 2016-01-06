@@ -1,3 +1,5 @@
+removed_sources:
+  atomix-2.14.0.tar.bz2: 511dca93a643fc2fa3194fc95fb15cef6ed53b9d
 sources:
-  "atomix-2.14.0.tar.bz2": 511dca93a643fc2fa3194fc95fb15cef6ed53b9d
-  "atomix-zh_TW.po.bz2": 2532cb13d3b746a63844c1e6a95cbfbf0c4764d6
+  atomix-3.18.0.tar.xz: 9bc5c6d767863017ac134e30f31a4dcee0a995fc
+  atomix-zh_TW.po.bz2: 2532cb13d3b746a63844c1e6a95cbfbf0c4764d6
