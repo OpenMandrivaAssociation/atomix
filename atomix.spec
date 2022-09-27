@@ -20,6 +20,7 @@ BuildRequires:	gettext
 BuildRequires:	perl(XML::Parser)
 BuildRequires:  imagemagick
 BuildRequires:  desktop-file-utils
+BuildRequires:	meson
 Requires(pre):	rpm-helper
 
 %description
