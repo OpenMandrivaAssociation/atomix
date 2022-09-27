@@ -3,14 +3,16 @@
 
 Summary:	Mind game - build molecules out of single atoms
 Name:		atomix
-Version:	3.18.0
+Version:	3.34.0
 Release:	1
 License:	GPLv2+
 Group:		Games/Puzzles
 URL:		http://triq.net/~jens/atomix.php
 Source:		http://ftp.gnome.org/pub/gnome/sources/%{name}/%url_ver/%{name}-%{version}.tar.xz
+Patch0:		atomix-3.34.0-lto.patch
 
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(libgnome-games-support-1)
 BuildRequires:	pkgconfig(appstream-glib)
 BuildRequires:	gnome-common
 BuildRequires:	intltool
@@ -29,18 +31,14 @@ how to construct complex molecules with this atom behaviour. The game
 is inspired by the original Amiga version.
 
 %prep
-%setup -q
+%autosetup -p1
+%meson
 
 %build
-export LDFLAGS="${LDFLAGS} -lm" 
-%configure --bindir=%{_gamesbindir} --localstatedir=%{_localstatedir}/lib
-
-%make
+%meson_build
 
 %install
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std \
-	bindir=%{_gamesbindir} \
-	localstatedir=%{_localstatedir}/lib
+%meson_install
 
 mkdir -p %{buildroot}/%{_localstatedir}/lib/games
 touch %{buildroot}/%{_localstatedir}/lib/games/atomix.scores
@@ -53,10 +51,9 @@ touch %{buildroot}/%{_localstatedir}/lib/games/atomix.scores
 
 %files -f %{name}.lang
 %doc README
-%attr(2511, root, games) %{_gamesbindir}/atomix
+%attr(2511, root, games) %{_bindir}/atomix
 %{_datadir}/%{name}
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/icons/*/*/*/atomix*.*
+%{_datadir}/metainfo/*.xml
 %{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/*.png
-%ghost %{_localstatedir}/lib/games/atomix.scores
-
+%ghost %attr(0664,root,games) %{_localstatedir}/lib/games/atomix.scores
