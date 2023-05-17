@@ -46,8 +46,8 @@ touch %{buildroot}/%{_localstatedir}/lib/games/atomix.scores
 
 %find_lang %{name}
 
-%pre
-%create_ghostfile %{_localstatedir}/lib/games/atomix.scores root games 0664
+#pre
+#create_ghostfile %{_localstatedir}/lib/games/atomix.scores root games 0664
 
 
 %files -f %{name}.lang
