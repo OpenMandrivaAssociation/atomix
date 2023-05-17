@@ -3,7 +3,7 @@
 
 Summary:	Mind game - build molecules out of single atoms
 Name:		atomix
-Version:	3.34.0
+Version:	44.0
 Release:	1
 License:	GPLv2+
 Group:		Games/Puzzles
