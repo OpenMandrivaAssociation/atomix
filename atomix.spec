@@ -9,7 +9,7 @@ License:	GPLv2+
 Group:		Games/Puzzles
 URL:		http://triq.net/~jens/atomix.php
 Source:		http://ftp.gnome.org/pub/gnome/sources/%{name}/%url_ver/%{name}-%{version}.tar.xz
-Patch0:		atomix-3.34.0-lto.patch
+#Patch0:		atomix-3.34.0-lto.patch
 
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libgnome-games-support-1)
