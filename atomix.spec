@@ -51,7 +51,7 @@ touch %{buildroot}/%{_localstatedir}/lib/games/atomix.scores
 
 
 %files -f %{name}.lang
-%doc README
+%doc README*
 %attr(2511, root, games) %{_bindir}/atomix
 %{_datadir}/%{name}
 %{_datadir}/icons/*/*/*/atomix*.*
