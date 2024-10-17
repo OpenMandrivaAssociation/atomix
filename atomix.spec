@@ -7,7 +7,7 @@ Version:	44.0
 Release:	1
 License:	GPLv2+
 Group:		Games/Puzzles
-URL:		http://triq.net/~jens/atomix.php
+URL:		https://triq.net/~jens/atomix.php
 Source:		http://ftp.gnome.org/pub/gnome/sources/%{name}/%url_ver/%{name}-%{version}.tar.xz
 #Patch0:		atomix-3.34.0-lto.patch
 
